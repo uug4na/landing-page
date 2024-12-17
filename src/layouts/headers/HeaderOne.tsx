@@ -17,8 +17,8 @@ const menu_data: DataType[] = [
     {
         id: 1,
         title: 'Home',
-        link: '#',
-        has_dropdown: true,
+        link: '/',
+        has_dropdown: false,
         sub_menus: [
             { title: 'Home', link: '/' },
         ]
@@ -27,7 +27,7 @@ const menu_data: DataType[] = [
         id: 2,
         title: 'About',
         link: '#',
-        has_dropdown: true,
+        has_dropdown: false,
         sub_menus: [
             { title: 'About 01', link: '/about' },
             { title: 'About 02', link: '/about-2' },
@@ -54,7 +54,6 @@ const menu_data: DataType[] = [
             { title: 'Pricing Plan', link: '/pricing' },
             { title: 'Team', link: '/team' },
             { title: 'Faq Page', link: '/faq' },
-            { title: '404', link: '/404' },
         ]
     },
     {

@@ -6,15 +6,15 @@ import React from 'react';
 
 
 export const metadata = {
-  title: "Cybal About Two - Cyber Security Next js Template",
+    title: "Cyber Transition",
 };
 
 const index = () => {
-  return (
-    <Wrapper>
-      <AboutTwo />
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <AboutTwo />
+        </Wrapper>
+    );
 };
 
 export default index;
