@@ -20,9 +20,7 @@ const menu_data: DataType[] = [
         link: '#',
         has_dropdown: true,
         sub_menus: [
-            { title: 'Home 01', link: '/' },
-            { title: 'Home 02', link: '/home-2' },
-            { title: 'Home 03', link: '/home-3' },
+            { title: 'Home', link: '/' },
         ]
     },
     {

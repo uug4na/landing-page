@@ -1,18 +1,17 @@
-
-import HomeOne from '@/components/homes/home';
+import HomeTwo from '@/components/homes/home-2';
 import Wrapper from '@/layouts/Wrapper';
 import React from 'react';
 
 export const metadata = {
-  title: "Cybal - Cyber Security Next js Template",
+    title: "Cyber Transition",
 };
 
 const index = () => {
-  return (
-    <Wrapper>
-      <HomeOne />
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <HomeTwo />
+        </Wrapper>
+    );
 };
 
 export default index;

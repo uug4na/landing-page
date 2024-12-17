@@ -3,15 +3,15 @@ import Wrapper from "@/layouts/Wrapper";
 
 
 export const metadata = {
-  title: "404 error || Cybal - Cyber Security Next js Template",
+    title: "404 error || Cyber Transition",
 };
 
 const index = () => {
-  return (
-    <Wrapper>
-      <Error />
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <Error />
+        </Wrapper>
+    );
 };
 
 export default index;

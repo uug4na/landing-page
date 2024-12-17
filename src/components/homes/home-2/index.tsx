@@ -15,23 +15,23 @@ import CounterAreaHomeOne from '../home/CounterAreaHomeOne';
 import FooterOne from '@/layouts/footers/FooterOne';
 
 const HomeTwo = () => {
-  return (
-    <>
-      <HeaderOne />
-      <HeroAreaHomeTwo />
-      <AboutAreaHomeTwo />
-      <ServiceAreaHomeTwo />
-      <AboutUsAreaHomeTwo />
-      <BrandAreaHomeTwo />
-      <PortfolioAreaHomeOne />
-      <ChooseAreaHomeOne />
-      <TestimonialAreaHomeOne />
-      <TeamAreaHomeOne />
-      <BlogAreaHomeOne />
-      <CounterAreaHomeOne style_2={true} />
-      <FooterOne />
-    </>
-  );
+    return (
+        <>
+            <HeaderOne />
+            <HeroAreaHomeTwo />
+            <AboutAreaHomeTwo />
+            <ServiceAreaHomeTwo />
+            <AboutUsAreaHomeTwo />
+            <BrandAreaHomeTwo />
+            <PortfolioAreaHomeOne />
+            <ChooseAreaHomeOne />
+            <TestimonialAreaHomeOne />
+            <TeamAreaHomeOne />
+            <BlogAreaHomeOne />
+            <CounterAreaHomeOne style_2={true} />
+            <FooterOne />
+        </>
+    );
 };
 
 export default HomeTwo;
