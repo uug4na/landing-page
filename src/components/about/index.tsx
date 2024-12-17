@@ -4,11 +4,11 @@ import React from 'react';
 import Breadcrumb from '../common/Breadcrumb';
 import AboutArea from './AboutArea';
 import BrandAreaHomeTwo from '../homes/home-2/BrandAreaHomeTwo';
-import PortfolioAreaHomeOne from '../homes/home-2/PortfolioAreaHomeOne';
-import ChooseAreaHomeOne from '../homes/home-2/ChooseAreaHomeOne';
-import TestimonialAreaHomeOne from '../homes/home-2/TestimonialAreaHomeOne';
-import TeamAreaHomeOne from '../homes/home-2/TeamAreaHomeOne';
-import NewsletterAreaHomeOne from '../homes/home-2/NewsletterAreaHomeOne';
+import PortfolioAreaHomeOne from '../homes/home/PortfolioAreaHomeOne';
+import ChooseAreaHomeOne from '../homes/home/ChooseAreaHomeOne';
+import TestimonialAreaHomeOne from '../homes/home/TestimonialAreaHomeOne';
+import TeamAreaHomeOne from '../homes/home/TeamAreaHomeOne';
+import NewsletterAreaHomeOne from '../homes/home/NewsletterAreaHomeOne';
 import FooterOne from '@/layouts/footers/FooterOne';
 
 const About = () => {

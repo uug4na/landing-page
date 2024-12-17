@@ -3,7 +3,7 @@ import React from 'react';
 import Breadcrumb from '../common/Breadcrumb';
 import FooterOne from '@/layouts/footers/FooterOne';
 import HeaderOne from '@/layouts/headers/HeaderOne';
-import PriceAreaHomeOne from '../homes/home-2/PriceAreaHomeOne';
+import PriceAreaHomeOne from '../homes/home/PriceAreaHomeOne';
 
 const Pricing = () => {
     return (
