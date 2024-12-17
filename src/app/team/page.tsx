@@ -5,15 +5,15 @@ import React from 'react';
 
 
 export const metadata = {
-  title: "Cybal Team - Cyber Security Next js Template",
+    title: "Cyber Transition | Team",
 };
 
 const index = () => {
-  return (
-    <Wrapper>
-      <Team />
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <Team />
+        </Wrapper>
+    );
 };
 
 export default index;

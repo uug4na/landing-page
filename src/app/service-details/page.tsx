@@ -4,15 +4,15 @@ import Wrapper from '@/layouts/Wrapper';
 import React from 'react';
 
 export const metadata = {
-  title: "Cybal Service Details - Cyber Security Next js Template",
+    title: "Cyber Transition | Service Details",
 };
 
 const index = () => {
-  return (
-    <Wrapper>
-      <ServiceDetails />
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <ServiceDetails />
+        </Wrapper>
+    );
 };
 
 export default index;

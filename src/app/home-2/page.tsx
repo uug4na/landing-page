@@ -5,7 +5,7 @@ import HomeTwo from '@/components/homes/home-2';
 
 
 export const metadata = {
-    title: "Cybal Home 02 - Cyber Security Next js Template",
+    title: "Cyber Transition | Home",
 };
 
 
