@@ -43,7 +43,7 @@ const ServiceAreaHomeTwo = () => {
                                 <img src="assets/img/service10.png" className="img-fluid" alt="image" />
                                 <h2>CCNP ENARSI сургалт</h2>
                                 <p>CCNP ENARSI сургалт нь Cisco -ийн ахисан түвшиний сургалт бөгөөд байгууллагын дотоод сүлжээ зохион байгуулах сайжруулах, асуудлыг илрүүлэх (troubleshooting) мэдлэг чадварыг онол практик хосолсон хэлбэрээр олгоно.</p>
-                                <Link href="/service">Read More <i className="ti-arrow-top-right"></i></Link>
+                                <Link href="/service-details">Read More <i className="ti-arrow-top-right"></i></Link>
                             </div>
                         </div>
                     </div>

@@ -13,13 +13,13 @@ const FooterOne = () => {
                         <div className="col-lg-3 col-sm-6 col-xs-12">
                             <div className="single_footer">
                                 {/* <Link href="/"><img src="assets/Logo/logo white.png" alt="image-here" /></Link> */}
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis dignissim.</p>
+                                {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis dignissim.</p> */}
                                 <div className="social_profile">
                                     <ul>
                                         <li><a target='_blank' href="https://www.facebook.com/cybertransition.mn" className="f_facebook"><i className="ti-facebook" title="Facebook"></i></a></li>
-                                        <li><a href="#" target='_blank' className="f_twitter"><i className="ti-twitter" title="Twitter"></i></a></li>
+                                        {/* <li><a href="#" target='_blank' className="f_twitter"><i className="ti-twitter" title="Twitter"></i></a></li> */}
                                         <li><a target='_blank' href="https://www.instagram.com/cybertransition/" className="f_instagram"><i className="ti-instagram" title="Instagram"></i></a></li>
-                                        <li><a href="#" className="f_linkedin"><i className="ti-linkedin" title="LinkedIn"></i></a></li>
+                                        {/* <li><a href="#" className="f_linkedin"><i className="ti-linkedin" title="LinkedIn"></i></a></li> */}
                                     </ul>
                                 </div>
                             </div>
@@ -29,10 +29,10 @@ const FooterOne = () => {
                                 <h4>About Company</h4>
                                 <ul>
                                     <li><a href="#">About us</a></li>
-                                    <li><a href="#">Blog & news</a></li>
-                                    <li><a href="#">Our Portfolio</a></li>
+                                    {/* <li><a href="#">Blog & news</a></li> */}
+                                    {/* <li><a href="#">Our Portfolio</a></li> */}
                                     <li><a href="#">Pricing plan</a></li>
-                                    <li><a href="#">Asked Question</a></li>
+                                    {/* <li><a href="#">Asked Question</a></li> */}
                                     <li><a href="#">Contact us</a></li>
                                 </ul>
                             </div>
@@ -52,10 +52,16 @@ const FooterOne = () => {
                         </div>
                         <div className="col-lg-3 col-sm-6 col-xs-12">
                             <div className="single_footer">
-                                <h4>Download App</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis.</p>
-                                <Link href="/"><img src="assets/img/play.png" className="foot_img" alt="image-here" /></Link>
-                                <Link href="/"><img src="assets/img/app.png" className="foot_img" alt="image-here" /></Link>
+                                {/* <h4>Download App</h4> */}
+                                <p>Мэдээллийн сүлжээ: дэд бүтэц, зохион байгуулалт, төлөвлөлт, сайжруулалт, асуудал илрүүлэх, зөвлөгөө өгөх</p>
+                                <p>
+
+                                    Мэдээллийн систем: архитектур гаргах, шийдэл боловсруулах
+                                </p>
+                                <p>
+                                    Мэдээллийн аюулгүй байдал: Penetration testing үйлчилгээ, зөвлөгөө</p>
+                                {/* <Link href="/"><img src="assets/img/play.png" className="foot_img" alt="image-here" /></Link> */}
+                                {/* <Link href="/"><img src="assets/img/app.png" className="foot_img" alt="image-here" /></Link> */}
                             </div>
                         </div>
                     </div>
@@ -68,9 +74,9 @@ const FooterOne = () => {
                         <div className="col-lg-6 col-sm-6 col-xs-12">
                             <div className="footer_menu">
                                 <ul>
-                                    <li><a href="#">Terms of use</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Cookie Policy</a></li>
+                                    {/* <li><a href="#">Terms of use</a></li> */}
+                                    {/* <li><a href="#">Privacy Policy</a></li> */}
+                                    {/* <li><a href="#">Cookie Policy</a></li> */}
                                 </ul>
                             </div>
                         </div>

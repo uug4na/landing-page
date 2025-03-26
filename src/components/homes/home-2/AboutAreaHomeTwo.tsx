@@ -25,8 +25,8 @@ const AboutAreaHomeTwo = () => {
                                 </ul>
                             </div>
                             <div className="skill_btn">
-                                <Link href="/service" className="btn_one">Get your services <i className="ti-arrow-top-right"></i></Link>
-                                <a href="#" className="btn_two">Contact with us <i className="ti-arrow-top-right"></i></a>
+                                {/* <Link href="/service" className="btn_one">Get your services <i className="ti-arrow-top-right"></i></Link> */}
+                                <a href="/contact" className="btn_two">Contact with us <i className="ti-arrow-top-right"></i></a>
                             </div>
                         </div>
                         <div className="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">

@@ -1,34 +1,47 @@
-
+"use client"
 import HeaderOne from '@/layouts/headers/HeaderOne';
-import React from 'react';
+import React, { useRef } from 'react';
 import HeroAreaHomeTwo from './HeroAreaHomeTwo';
 import AboutAreaHomeTwo from './AboutAreaHomeTwo';
 import ServiceAreaHomeTwo from './ServiceAreaHomeTwo';
 import AboutUsAreaHomeTwo from './AboutUsAreaHomeTwo';
-import BrandAreaHomeTwo from './BrandAreaHomeTwo';
-import PortfolioAreaHomeOne from '../home/PortfolioAreaHomeOne';
-import ChooseAreaHomeOne from '../home/ChooseAreaHomeOne';
-import TestimonialAreaHomeOne from '../home/TestimonialAreaHomeOne';
-import TeamAreaHomeOne from '../home/TeamAreaHomeOne';
-import BlogAreaHomeOne from '../home/BlogAreaHomeOne';
-import CounterAreaHomeOne from '../home/CounterAreaHomeOne';
 import FooterOne from '@/layouts/footers/FooterOne';
 
-const HomeTwo = () => {
+const HomeTwo: React.FC = () => {
+    const heroRef = useRef<HTMLDivElement>(null);
+    const aboutRef = useRef<HTMLDivElement>(null);
+    const servicesRef = useRef<HTMLDivElement>(null);
+    const aboutUsRef = useRef<HTMLDivElement>(null);
+
+    const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+        ref.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const refs = {
+        heroRef,
+        aboutRef,
+        servicesRef,
+        aboutUsRef
+    };
+
     return (
         <>
-            <HeaderOne />
-            <HeroAreaHomeTwo />
-            <AboutAreaHomeTwo />
-            <ServiceAreaHomeTwo />
-            <AboutUsAreaHomeTwo />
-            <BrandAreaHomeTwo />
-            <PortfolioAreaHomeOne />
-            <ChooseAreaHomeOne />
-            <TestimonialAreaHomeOne />
-            <TeamAreaHomeOne />
-            <BlogAreaHomeOne />
-            <CounterAreaHomeOne style_2={true} />
+            <HeaderOne
+                scrollToSection={scrollToSection}
+                refs={refs}
+            />
+            <div ref={heroRef}>
+                <HeroAreaHomeTwo />
+            </div>
+            <div ref={servicesRef}>
+                <ServiceAreaHomeTwo />
+            </div>
+            <div ref={aboutUsRef}>
+                <AboutAreaHomeTwo />
+            </div>
+            {/* <div ref={aboutUsRef}>
+                <AboutUsAreaHomeTwo />
+            </div> */}
             <FooterOne />
         </>
     );

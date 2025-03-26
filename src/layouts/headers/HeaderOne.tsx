@@ -2,9 +2,10 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 
-interface DataType {
+interface MenuItem {
     id: number;
     title: string;
+    section: string;
     link: string;
     has_dropdown: boolean;
     sub_menus?: {
@@ -13,76 +14,61 @@ interface DataType {
     }[];
 }
 
-const menu_data: DataType[] = [
+interface HeaderProps {
+    scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
+    refs: {
+        heroRef: React.RefObject<HTMLDivElement>;
+        aboutRef: React.RefObject<HTMLDivElement>;
+        servicesRef: React.RefObject<HTMLDivElement>;
+        aboutUsRef: React.RefObject<HTMLDivElement>;
+    };
+}
+
+const menu_data: MenuItem[] = [
     {
         id: 1,
         title: 'Home',
-        link: '/',
+        section: 'hero',
+        link: '#hero',
         has_dropdown: false,
-        sub_menus: [
-            { title: 'Home', link: '/' },
-        ]
     },
-    {
-        id: 2,
-        title: 'About',
-        link: '#',
-        has_dropdown: false,
-        sub_menus: [
-            { title: 'About 01', link: '/about' },
-            { title: 'About 02', link: '/about-2' },
-        ]
-    },
+    // {
+    //     id: 2,
+    //     title: 'About',
+    //     section: 'about',
+    //     link: '#about',
+    //     has_dropdown: false,
+    // },
     {
         id: 3,
         title: 'Services',
-        link: '#',
-        has_dropdown: true,
-        sub_menus: [
-            { title: 'Services', link: '/service' },
-            { title: 'Services Deails', link: '/service-details' },
-        ]
+        section: 'services',
+        link: '#services',
+        has_dropdown: false,
     },
     {
         id: 4,
-        title: 'Pages',
-        link: '#',
-        has_dropdown: true,
-        sub_menus: [
-            { title: 'Project', link: '/project' },
-            { title: 'Project Details', link: '/project-details' },
-            { title: 'Pricing Plan', link: '/pricing' },
-            { title: 'Team', link: '/team' },
-            { title: 'Faq Page', link: '/faq' },
-        ]
-    },
-    {
-        id: 5,
-        title: 'Blog',
-        link: '#',
-        has_dropdown: true,
-        sub_menus: [
-            { title: 'Blog', link: '/blog' },
-            { title: 'Blog Details', link: '/blog-details' },
-        ]
+        title: 'About Us',
+        section: 'aboutUs',
+        link: '#aboutUs',
+        has_dropdown: false,
     },
     {
         id: 5,
         title: 'Contact',
+        section: 'contact',
         link: '/contact',
         has_dropdown: false,
     },
-]
+];
 
-const HeaderOne = () => {
-    const [open, setOpen] = useState<Boolean>(false);
-    const handleActive = () => setOpen(!open);
-
-
+const HeaderOne: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
+    const [open, setOpen] = useState<boolean>(false);
     const [navTitle, setNavTitle] = useState<string>("");
 
-    //openMobileMenu
-    const openMobileMenu = (menu: string) => {
+    const handleActive = (): void => setOpen(!open);
+
+    const openMobileMenu = (menu: string): void => {
         if (navTitle === menu) {
             setNavTitle("");
         } else {
@@ -90,70 +76,81 @@ const HeaderOne = () => {
         }
     };
 
-
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, section: string): void => {
+        e.preventDefault();
+        switch (section) {
+            case 'hero':
+                scrollToSection(refs.heroRef);
+                break;
+            case 'about':
+                scrollToSection(refs.aboutRef);
+                break;
+            case 'services':
+                scrollToSection(refs.servicesRef);
+                break;
+            case 'aboutUs':
+                scrollToSection(refs.aboutUsRef);
+                break;
+            default:
+                window.location.href = '/contact';
+        }
+    };
 
     return (
-        <>
-            <div id="navigation" className="navbar-light bg-faded site-navigation">
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-20 align-self-center">
-                            <div className="site-logo">
-                                <Link href="/"><img src="assets/Logo/white logo mn.png" alt="" /></Link>
-                            </div>
+        <div id="navigation" className="navbar-light bg-faded site-navigation">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-20 align-self-center">
+                        <div className="site-logo">
+                            <Link href="/"><img src="assets/Logo/white logo mn.png" alt="" /></Link>
                         </div>
+                    </div>
 
-                        <div className="col-60 d-flex justify-content-center">
-                            <nav id="main-menu">
-                                <ul>
-                                    {menu_data.map((item, i) => (
-                                        <li key={i} className={`${item.has_dropdown ? 'menu-item-has-children' : ''}`}>
-                                            <Link href={item.link}>{item.title}</Link>
-                                            {item.has_dropdown && (
-                                                <ul>
-                                                    {item?.sub_menus?.map((sub_item, index) => (
-                                                        <li key={index}><Link href={sub_item.link}>{sub_item.title}</Link></li>
-                                                    ))}
-                                                </ul>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </nav>
-                        </div>
-
-                        <div className="col-20 d-none d-xl-block text-end align-self-center">
-                            <Link href="/contact" className="btn_one">Get started now</Link>
-                        </div>
-
-                        <div id="sm_menu_ham" onClick={handleActive} className={`${open ? 'open' : ''}`}>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-
-                        <div className={`sm_menu_outer slide ${open ? 'active' : ''}`}>
-                            <ul className="mobile_menu">
-                                {menu_data.map((item, i) => (
-                                    <li key={i} className={`${item.has_dropdown ? 'hasChild' : ''} ${navTitle === item.title ? "active" : ""}`} onClick={() => openMobileMenu(item.title)}>
-                                        <Link href={item.link}>{item.title}</Link>
-                                        {item.has_dropdown && (
-                                            <ul className="sub-menu">
-                                                {item?.sub_menus?.map((sub_item, index) => (
-                                                    <li key={index} className="back" onClick={() => openMobileMenu(item.title)}><Link href={sub_item.link}>{sub_item.title}</Link></li>
-                                                ))}
-                                            </ul>
-                                        )}
+                    <div className="col-60 d-flex justify-content-center">
+                        <nav id="main-menu">
+                            <ul>
+                                {menu_data.map((item) => (
+                                    <li key={item.id} className={item.has_dropdown ? 'menu-item-has-children' : ''}>
+                                        <Link
+                                            href={item.link}
+                                            onClick={(e) => handleScroll(e, item.section)}
+                                        >
+                                            {item.title}
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </nav>
+                    </div>
 
+                    <div id="sm_menu_ham" onClick={handleActive} className={`${open ? 'open' : ''}`}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div className={`sm_menu_outer slide ${open ? 'active' : ''}`}>
+                        <ul className="mobile_menu">
+                            {menu_data.map((item) => (
+                                <li
+                                    key={item.id}
+                                    className={`${item.has_dropdown ? 'hasChild' : ''} ${navTitle === item.title ? "active" : ""}`}
+                                    onClick={() => item.has_dropdown && openMobileMenu(item.title)}
+                                >
+                                    <Link
+                                        href={item.link}
+                                        onClick={(e) => handleScroll(e, item.section)}
+                                    >
+                                        {item.title}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
