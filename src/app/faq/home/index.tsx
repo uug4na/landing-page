@@ -1,8 +1,8 @@
-
+"use client"
 
 import React from 'react';
 import HeaderOne from '@/layouts/headers/HeaderOne';
-import HeroAreaHomeOne from './HeroAreaHomeOne'; 
+import HeroAreaHomeOne from './HeroAreaHomeOne';
 import AboutAreaHomeOne from './AboutAreaHomeOne';
 import ServiceAreaHomeOne from './ServiceAreaHomeOne';
 import AoutUsAreaHomeOne from './AoutUsAreaHomeOne';
@@ -16,23 +16,23 @@ import FooterOne from '@/layouts/footers/FooterOne';
 import CounterAreaHomeOne from './CounterAreaHomeOne';
 
 const HomeOne = () => {
-  return (
-    <>
-       <HeaderOne />
-       <HeroAreaHomeOne />
-       <CounterAreaHomeOne />
-       <AboutAreaHomeOne />
-       <ServiceAreaHomeOne />
-       <AoutUsAreaHomeOne />
-       <PortfolioAreaHomeOne />
-       <ChooseAreaHomeOne />
-       <PriceAreaHomeOne />
-       <TestimonialAreaHomeOne />
-       <TeamAreaHomeOne />
-       <NewsletterAreaHomeOne />
-       <FooterOne />
-    </>
-  );
+    return (
+        <>
+            <HeaderOne />
+            <HeroAreaHomeOne />
+            <CounterAreaHomeOne />
+            <AboutAreaHomeOne />
+            <ServiceAreaHomeOne />
+            <AoutUsAreaHomeOne />
+            <PortfolioAreaHomeOne />
+            <ChooseAreaHomeOne />
+            <PriceAreaHomeOne />
+            <TestimonialAreaHomeOne />
+            <TeamAreaHomeOne />
+            <NewsletterAreaHomeOne />
+            <FooterOne />
+        </>
+    );
 };
 
 export default HomeOne;

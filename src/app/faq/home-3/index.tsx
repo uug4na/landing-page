@@ -1,6 +1,6 @@
-
-
-import React from 'react';
+// HomeThree.tsx
+'use client'
+import React, { useRef } from 'react';
 import HeaderOne from '@/layouts/headers/HeaderOne';
 import HeroAreaHomeThree from './HeroAreaHomeThree';
 import FeatureAreaHomeThree from './FeatureAreaHomeThree';
@@ -17,15 +17,37 @@ import BlogAreaHomeOne from '../home/BlogAreaHomeOne';
 import FooterOne from '@/layouts/footers/FooterOne';
 
 const HomeThree = () => {
+    // Initialize refs
+    const heroRef = useRef<HTMLDivElement>(null);
+    const aboutRef = useRef<HTMLDivElement>(null);
+    const servicesRef = useRef<HTMLDivElement>(null);
+    const aboutUsRef = useRef<HTMLDivElement>(null);
+
+    // Scroll function implementation
+    const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+        if (ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <>
-            <HeaderOne />
-            <HeroAreaHomeThree />
+            <HeaderOne
+                scrollToSection={scrollToSection}
+                refs={{
+                    heroRef,
+                    aboutRef,
+                    servicesRef,
+                    aboutUsRef
+                }}
+            />
+            {/* Add ref to each section component that needs scrolling */}
+            <div ref={heroRef}><HeroAreaHomeThree /></div>
             <FeatureAreaHomeThree />
-            <ServiceAreaHomeThree />
-            <AboutAreaHomeThree />
+            <div ref={servicesRef}><ServiceAreaHomeThree /></div>
+            <div ref={aboutRef}><AboutAreaHomeThree /></div>
             <BrandAreaHomeTwo />
-            <AboutUsAreaHomeThree />
+            <div ref={aboutUsRef}><AboutUsAreaHomeThree /></div>
             <CounterAreaHomeOne style_2={true} />
             <PriceAreaHomeOne />
             <TestimonialAreaHomeOne />

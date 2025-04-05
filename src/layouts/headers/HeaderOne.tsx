@@ -1,3 +1,4 @@
+// HeaderOne.tsx
 'use client'
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -15,8 +16,8 @@ interface MenuItem {
 }
 
 interface HeaderProps {
-    scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
-    refs: {
+    scrollToSection?: (ref: React.RefObject<HTMLDivElement>) => void; // Made optional
+    refs?: { // Made optional
         heroRef: React.RefObject<HTMLDivElement>;
         aboutRef: React.RefObject<HTMLDivElement>;
         servicesRef: React.RefObject<HTMLDivElement>;
@@ -32,13 +33,6 @@ const menu_data: MenuItem[] = [
         link: '#hero',
         has_dropdown: false,
     },
-    // {
-    //     id: 2,
-    //     title: 'About',
-    //     section: 'about',
-    //     link: '#about',
-    //     has_dropdown: false,
-    // },
     {
         id: 3,
         title: 'Services',
@@ -78,22 +72,32 @@ const HeaderOne: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
 
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, section: string): void => {
         e.preventDefault();
-        switch (section) {
-            case 'hero':
-                scrollToSection(refs.heroRef);
-                break;
-            case 'about':
-                scrollToSection(refs.aboutRef);
-                break;
-            case 'services':
-                scrollToSection(refs.servicesRef);
-                break;
-            case 'aboutUs':
-                scrollToSection(refs.aboutUsRef);
-                break;
-            default:
-                window.location.href = '/contact';
+        // Only attempt scrolling if props are provided
+        if (scrollToSection && refs) {
+            switch (section) {
+                case 'hero':
+                    if (refs.heroRef) scrollToSection(refs.heroRef);
+                    break;
+                case 'about':
+                    if (refs.aboutRef) scrollToSection(refs.aboutRef);
+                    break;
+                case 'services':
+                    if (refs.servicesRef) scrollToSection(refs.servicesRef);
+                    break;
+                case 'aboutUs':
+                    if (refs.aboutUsRef) scrollToSection(refs.aboutUsRef);
+                    break;
+                case 'contact':
+                    window.location.href = '/contact';
+                    break;
+                default:
+                    break;
+            }
+        } else if (section === 'contact') {
+            // Fallback for contact link when no scrollToSection is provided
+            window.location.href = '/contact';
         }
+        // If no scrollToSection/refs, let the Link handle navigation (though it won’t scroll)
     };
 
     return (
