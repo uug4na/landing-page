@@ -46,8 +46,7 @@ const HeroAreaHomeTwo = () => {
                     <div className="row">
                         <div className="col-lg-6 col-sm-6 col-xs-12">
                             <div className="hero-text ht2">
-                                <h1>Кибер ертөнцөд өөрийгөө болон байгууллагаа хамгаалахад суралцая."
-                                    <br />болон байгууллагаа <br />хамгаалахад суралцая.</h1>
+                                <h1>Securing your digital future.</h1>
                             </div>
                             <div className="skill_btn">
                                 {/* <Link href="/service" className="btn_one">Get your services <i className="ti-arrow-top-right"></i></Link> */}
